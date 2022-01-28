@@ -74,7 +74,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Statistics;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.abs_min().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -97,7 +97,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Statistics;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.abs_max().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -125,7 +125,7 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Mean;
     ///
     /// # fn main() {
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.mean().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -155,7 +155,7 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Statistics;
     ///
     /// # fn main() {
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.geometric_mean().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -194,7 +194,7 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Statistics;
     ///
     /// # fn main() {
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.harmonic_mean().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -229,7 +229,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Variance;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.variance().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -257,7 +257,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Statistics;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.std_dev().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -283,7 +283,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Statistics;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.population_variance().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -309,7 +309,7 @@ pub trait Statistics<T> {
     /// use std::f64;
     /// use statrs::statistics::Statistics;
     ///
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.population_std_dev().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
@@ -345,16 +345,16 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Statistics;
     ///
     /// # fn main() {
-    /// let x = [];
-    /// assert!(x.covariance(&[]).is_nan());
+    /// let x: [f64; 0] = [];
+    /// assert!(x.covariance([]).is_nan());
     ///
     /// let y1 = [0.0, f64::NAN, 3.0, -2.0];
     /// let y2 = [-5.0, 4.0, 10.0, f64::NAN];
-    /// assert!(y1.covariance(&y2).is_nan());
+    /// assert!(y1.covariance(y2).is_nan());
     ///
     /// let z1 = [0.0, 3.0, -2.0];
     /// let z2 = [-5.0, 4.0, 10.0];
-    /// assert_almost_eq!(z1.covariance(&z2), -5.5, 1e-14);
+    /// assert_almost_eq!(z1.covariance(z2), -5.5, 1e-14);
     /// # }
     /// ```
     fn covariance(self, other: Self) -> T;
@@ -382,16 +382,16 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Statistics;
     ///
     /// # fn main() {
-    /// let x = [];
-    /// assert!(x.population_covariance(&[]).is_nan());
+    /// let x: [f64; 0] = [];
+    /// assert!(x.population_covariance([]).is_nan());
     ///
     /// let y1 = [0.0, f64::NAN, 3.0, -2.0];
     /// let y2 = [-5.0, 4.0, 10.0, f64::NAN];
-    /// assert!(y1.population_covariance(&y2).is_nan());
+    /// assert!(y1.population_covariance(y2).is_nan());
     ///
     /// let z1 = [0.0, 3.0, -2.0];
     /// let z2 = [-5.0, 4.0, 10.0];
-    /// assert_almost_eq!(z1.population_covariance(&z2), -11.0 / 3.0, 1e-14);
+    /// assert_almost_eq!(z1.population_covariance(z2), -11.0 / 3.0, 1e-14);
     /// # }
     /// ```
     fn population_covariance(self, other: Self) -> T;
@@ -412,7 +412,7 @@ pub trait Statistics<T> {
     /// use statrs::statistics::Statistics;
     ///
     /// # fn main() {
-    /// let x = [];
+    /// let x: [f64; 0] = [];
     /// assert!(x.quadratic_mean().is_nan());
     ///
     /// let y = [0.0, f64::NAN, 3.0, -2.0];
